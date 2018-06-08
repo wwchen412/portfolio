@@ -71,6 +71,35 @@ nav{
     }
     .titles{
         width: 100%;
+        h2{
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            &:before{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: $maincolor;
+                transform: translateX(-100%);
+                animation: loadText .5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            }
+            &:nth-child(3){
+                &:before{
+                    animation-delay: .2s;
+                }
+                
+            }
+        }
+    }
+    @keyframes loadText{
+        0%{
+            transform: translateX(-100%);
+
+        }100%{
+            transform: translateX(100%);
+        }
     }
     .main_titles_info{
         display: flex;
@@ -83,12 +112,15 @@ nav{
 }
 .bg_line{
     position: absolute;
-    max-width: 40vw;
+    max-width: 30vw;
     animation: rotates 8s infinite linear;
+    @include mq(tablet){
+        max-width: 40vw;
+    }
     &.circle{
         top: 35%;
         right: 20%;
-        max-width: 25vw;
+        max-width: 20vw;
         @include mq(tablet){
             top: 20%;
             right: 30%
@@ -96,13 +128,15 @@ nav{
     } 
     &.ran{
         top: 30%;
-        right: 10px;
+        right: 7%;
+        max-width: 30vw;
         animation-delay: -2s;
         animation-duration: 10s;
         animation-direction: reverse;
         @include mq(tablet){
             top: 10%;
             right: 10%;
+            max-width: 40vw;
         }
     }
 
@@ -275,11 +309,17 @@ nav{
                     opacity: .9;
                     filter: grayscale(.1); 
                     transition: .3s;             }
+                    .link_btn{
+                        transform: translateX(0);
+                        transition: 0;
+                        opacity: 1;
+                    }
             }
         }
     }
     .works_select_all{
         position: relative;
+        overflow: hidden;
         .works_img_title{
             background: #fff;
             position: absolute;
@@ -302,6 +342,16 @@ nav{
             padding: 1.2rem 1rem;
         }
     }
+    .link_btn{
+        display: inline-block;
+        background-color: #333;
+        
+        @include mq(tablet){
+            transform: translateX(-200%);
+        opacity: 0;
+        transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+    }
 }
 .contact_form{
     background: #fff;
@@ -311,6 +361,7 @@ nav{
     box-shadow: 0 0 20px rgba(#ccc,.2);
     border-radius: 5px;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     input,textarea{
         appearance: none;
         border: 1px solid #ccc;
@@ -329,4 +380,10 @@ nav{
         }
     }
     
+}
+footer{
+    padding: 1rem;
+    background: #fff;
+    color:#ccc;
+    font-size: 0.8rem;
 }
