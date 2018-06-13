@@ -468,12 +468,12 @@ footer {
     &:hover{
         .works_list_info {
             opacity: 1;
-            background-color: rgba(black, 0.3); 
+            background-color: rgba(black, 0.8); 
             color: #fff;
           }
-          img{
-            filter: blur(50px);
-          }
+          // img{
+          //   filter: blur(50px);
+          // }
     }
     
   }
