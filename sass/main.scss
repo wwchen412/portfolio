@@ -109,6 +109,23 @@ nav {
     justify-content: space-between;
   }
 }
+.animate-arrow{
+  overflow: hidden;
+  animation: arrow 1.2s infinite ease-in-out; 
+}
+@keyframes arrow{
+  0%{
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(50%);
+    opacity: 0;
+  }
+}
 .bg_line {
   position: absolute;
   max-width: 30vw;
