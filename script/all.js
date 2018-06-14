@@ -52,6 +52,21 @@
 
         worksList.innerHTML = workListStr;
     }
+    // let jsForm = document.querySelector('.js_form');
+    // let jsFormInput = document.querySelectorAll('.js_form input');
+    // let jsFormText = document.querySelector('.js_form textarea');
+
+    // document.querySelector('.js-send').addEventListener('click',function(){
+    //     for(var i =0 ;i<jsFormInput.length;i++){
+    //         if(!jsFormInput[i].value){
+    //             jsFormInput[i].classList.add('error');
+    //         }else if(!jsFormText.value){
+    //             jsFormText.classList.add('error');
+    //         }else{
+    //             jsForm.submit();
+    //         }
+    //     }
+    // })
     
 })();
 
